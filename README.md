@@ -1,76 +1,84 @@
-# aws-vpc-load-balancer-autoscaling
-AWS project demonstrating VPC networking, public and private subnets, load balancing, auto scaling, NAT Gateway, and bastion host access.
-# AWS VPC, Load Balancer and Auto Scaling
+# AWS VPC, Load Balancer & Auto Scaling
 
-## Project Date
+## 📌 Project Overview
 
-2025
+This project demonstrates how to build a scalable application environment in AWS using **Amazon VPC, EC2, Application Load Balancer, and Auto Scaling**.
 
-## Project Overview
+The architecture is designed to distribute incoming application traffic across EC2 instances and automatically adjust the number of instances based on demand.
 
-This project demonstrates the setup of an AWS Virtual Private Cloud (VPC)
-with public and private subnets.
+## 🏗️ Architecture
 
-The architecture includes EC2 instances, a Load Balancer, Auto Scaling,
-NAT Gateway, and a Bastion Host for accessing private resources.
+```text
+                    Internet
+                       |
+                       v
+              Application Load Balancer
+                       |
+              +--------+--------+
+              |                 |
+              v                 v
+           EC2 Instance      EC2 Instance
+              |                 |
+              +--------+--------+
+                       |
+                 Auto Scaling
+                       |
+                 Amazon VPC
+```
 
-## AWS Services Used
+## ☁️ AWS Services Used
 
-- Amazon VPC
+- **Amazon VPC** — Provides the isolated network environment.
+- **Amazon EC2** — Runs the application servers.
+- **Application Load Balancer** — Distributes incoming traffic across EC2 instances.
+- **Auto Scaling** — Helps maintain the required number of EC2 instances.
+- **AWS IAM** — Manages access and permissions.
+
+## ⚙️ How It Works
+
+1. Create an Amazon VPC with the required networking components.
+2. Launch EC2 instances inside the VPC.
+3. Configure an Application Load Balancer.
+4. Register EC2 instances with the target group.
+5. Configure an Auto Scaling Group.
+6. Route incoming traffic through the Load Balancer.
+7. Auto Scaling can add or remove EC2 instances according to configured conditions.
+
+## 🔐 Security
+
+The project uses AWS security controls such as:
+
+- Security Groups
+- IAM permissions
+- Public and private subnet concepts
+- Controlled inbound and outbound traffic
+
+## 🛠️ Technologies Used
+
+- AWS VPC
 - Amazon EC2
 - Application Load Balancer
 - Auto Scaling
-- NAT Gateway
-- Elastic IP
-- IAM
-- Security Groups
+- AWS IAM
+- Git & GitHub
 
-## Project Objectives
+## 🎯 What I Learned
 
-- Create a custom VPC
-- Configure public and private subnets
-- Launch EC2 instances
-- Configure a Load Balancer
-- Configure Auto Scaling
-- Configure a NAT Gateway
-- Use a Bastion Host to access private servers
-- Configure security groups
-- Host a webpage on a public server
+- AWS VPC fundamentals
+- EC2 instance deployment
+- Application Load Balancer configuration
+- Target groups
+- Auto Scaling Groups
+- AWS networking concepts
+- Basic cloud security
+- How to document AWS projects using GitHub
 
-## Basic Architecture
+## 📂 Project Type
 
-Internet
-   |
-Load Balancer
-   |
-Public Subnet
-   |
-EC2 / Auto Scaling
-   |
-Private Subnet
-   |
-Private EC2 Server
+**Cloud / AWS / Networking / DevOps**
 
-Bastion Host
-   |
-Private Server
+## 👨‍💻 Author
 
-NAT Gateway
-   |
-Internet Access for Private Resources
+**Shailesh Bidave**
 
-## What I Learned
-
-- AWS VPC networking
-- Public and private subnets
-- EC2 instance management
-- Load Balancer configuration
-- Auto Scaling
-- NAT Gateway
-- Bastion Host concept
-- Security Groups
-- Basic AWS networking
-
-## Project Type
-
-Resume Project / Learning Project
+GitHub: [@bidaveeshailesh](https://github.com/bidaveeshailesh)
